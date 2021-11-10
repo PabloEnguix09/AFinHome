@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE">
+
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/03c106061f.js" crossorigin="anonymous"></script>
+
+    <script src="../js/compra.js"></script>
+    <title>AFinHome, atrévete a soñar</title>
+</head>
+
+<body>
+    <header class="encabezado fixed-top">
+        <a href="../index.html"><img class="logo" src="../img/logo.png" alt="logo"/></a>
+
+        <nav class="barra">
+            <ul>
+                <li><a href="compra.html">Compra/Alquila</a></li>
+                <li><a href="vende.html">Vende</a></li>
+                <li><a href="proximamente.html">Simula tu hipoteca</a></li>
+                <li><a href="proximamente.html">Invierte con nosotros</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <button><i class="fas fa-globe-europe"></i></button>
+    </header>
+
+    <h1 class="primeraCosa centradoH">Encuentra tu nuevo hogar</h1>
+
+    <main>
+
+        <div id="buscadorCasa">
+            <input type="radio" name="CompraAlquilar" id="compraBuscador">
+            <label for="compraBuscador">Comprar</label>
+            <input class="m-1" type="radio" name="CompraAlquilar" id="alquilarBuscador">
+            <label for="alquilarBuscador">Alquilar</label>
+
+            <span class="m-4 spanPrecio">Precio: </span>
+            <input class="precioBuscador" type="text" placeholder="Desde">
+            <span class="m-2 spanPrecio"> - </span>
+            <input class="precioBuscador" type="text" placeholder="Hasta">
+
+            
+            <div class="ciudadBuscador">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="ubicacionBuscador" placeholder="Ubicación">
+            </div>
+            <button class="button buttonInverted botonBuscador m-3">Buscar</button>
+        </div>
+        <h4 id="cuantasCasas"><span>XXX</span> casas y pisos cerca de tu zona</h4>
+
+        <div id="resultadoFiltro">
+            <div id="filtroBuscador">
+                <p>Tipo de inmueble</p>
+                <select name="tipoInmuebleFiltro" id="tipoInmuebleFiltro" onchange="refrescarTipoPiso(value)">
+                    <option value="1">Piso</option>
+                    <option value="2">Habitación en vivienda compartida</option>
+                    <option value="3">Casa o chalet</option>
+                    <option value="4">Oficina, local o nave</option>
+                    <option value="5">Plaza de garaje</option>
+                    <option value="6">Trastero</option>
+                    <option value="7">Edificio</option>
+                    <option value="8">Terreno</option>
+                </select>
+                <br>
+                <p>Tipo de operación</p>
+                <input type="radio" name="Venta" id="ventaRadioButton" value="1" onchange="refrescarTipoOperacion(value)"/>
+            <label for="ventaRadioButton">Venta</label>
+            <br/>
+            <input type="radio" name="Venta" id="alquilerRadioButton" value="2" onchange="refrescarTipoOperacion(value)" />
+            <label for="alquilerRadioButton">Alquiler</label>
+            <br>
+            <p>Precio</p>
+            <input class="precioBuscador" type="text" placeholder="Desde">
+            <span>-</span>
+            <input class="precioBuscador" type="text" placeholder="Hasta">
+            <br>
+            <p>Planta</p>
+            <select name='numeroPlanta' id='plantaNum' onchange='refrescarOtraPlanta()'>
+                <option value='0'>Por debajo de la planta baja (-2)</option>
+                <option value='1'>Por debajo de la planta baja (-1)</option>
+                <option value='2'>Sótano</option><option value='3'>Semi-sótano</option>
+                <option value='4'>Bajo</option><option value='5'>Entreplanta</option>
+                <option value='6'>Planta 1ª</option>
+                <option value='7'>Planta 2ª</option>
+                <option value='8'>Planta 3ª</option>
+                <option value='9'>Planta 4ª</option>
+                <option value='10'>Planta 5ª</option>
+                <option value='11'>Planta 6ª</option>
+                <option value='12'>Planta 7ª</option>
+                <option value='13'>Planta 8ª</option>
+                <option value='14'>Planta 9ª</option>
+                <option value='15'>Planta 10ª</option>
+                <option value='16'>Otro</option></select>
+                <br>
+                <input type='text' id='otraPlanta' placeholder='Especifique nº de planta' hidden><br>
+                <input type='checkbox' name='ultimoBloque' id='ultimoBloque'>
+                <label for='ultimoBloque'>La última planta del bloque</label>
+
+                <p>Nº de habitaciones</p>
+                <input type="radio" name="unaHab" id="unaHab" value="1" onchange="refrescarHabitaciones(value)"/>
+                <label for="unaHab">1</label>
+                <br/>
+                <input type="radio" name="dosHab" id="dosHab" value="2" onchange="refrescarHabitaciones(value)" />
+                <label for="dosHab">2</label>
+                <input type="radio" name="tresHab" id="tresHab" value="3" onchange="refrescarHabitaciones(value)"/>
+                <label for="tresHab">3</label>
+                <br/>
+                <input type="radio" name="cuatroHab" id="cuatroHab" value="4" onchange="refrescarHabitaciones(value)" />
+                <label for="cuatroHab">4+</label>
+            
+            </div>
+            <div id="resultadosBusqueda">
+                <div class="filaResultados">
+                    <div class='resultadoBusqueda'>
+                        <img src='../img/fondo.jpg' alt='Imagen piso'>
+                        <br>
+                        <b>XX.XXX €</b>
+                        <br>
+                        <span>Piso en <b>XXXXXXX XXXXXXXX</b></span>
+                        <p>Insertar zona/barrio</p>
+                        <hr class='caracteristicasPiso'>
+                        <span>XXX m<sup>2</sup></span> <br>
+                        <span>X habitaciones</span> <br>
+                        <span>X baños</span> <br>
+                        <span>Xª planta</span> <br>
+                    </div>
+    
+                    <div class='resultadoBusqueda' onclick='verPiso(1)'>
+                        <img src='../img/fondo.jpg' alt='Imagen piso'>
+                        <br>
+                        <b class='precioCasa'>XX.XXX €</b>
+                        <br>
+                        <span>Piso en <b>XXXXXXX XXXXXXXX</b></span>
+                        <p>Insertar zona/barrio</p>
+                        <hr class='caracteristicasPiso'>
+                        <span>XXX m<sup>2</sup></span> <br>
+                        <span>X habitaciones</span> <br>
+                        <span>X baños</span> <br>
+                        <span>Xª planta</span> <br>
+                    </div>
+    
+    
+                    <div class='resultadoBusqueda'>
+                        <img src='../img/fondo.jpg' alt='Imagen piso'>
+                        <br>
+                        <b>XX.XXX €</b>
+                        <br>
+                        <span>Piso en <b>XXXXXXX XXXXXXXX</b></span>
+                        <p>Insertar zona/barrio</p>
+                        <hr class='caracteristicasPiso'>
+                        <span>XXX m<sup>2</sup></span> <br>
+                        <span>X habitaciones</span> <br>
+                        <span>X baños</span> <br>
+                        <span>Xª planta</span> <br>
+                    </div>
+                </div>
+                
+
+
+                <div class="filaResultados">
+                    <div class='resultadoBusqueda'>
+                        <img src='../img/fondo.jpg' alt='Imagen piso'>
+                        <br>
+                        <b>XX.XXX €</b>
+                        <br>
+                        <span>Piso en <b>XXXXXXX XXXXXXXX</b></span>
+                        <p>Insertar zona/barrio</p>
+                        <hr class='caracteristicasPiso'>
+                        <span>XXX m<sup>2</sup></span> <br>
+                        <span>X habitaciones</span> <br>
+                        <span>X baños</span> <br>
+                        <span>Xª planta</span> <br>
+                    </div>
+    
+                    <div class='resultadoBusqueda'>
+                        <img src='../img/fondo.jpg' alt='Imagen piso'>
+                        <br>
+                        <b>XX.XXX €</b>
+                        <br>
+                        <span>Piso en <b>XXXXXXX XXXXXXXX</b></span>
+                        <p>Insertar zona/barrio</p>
+                        <hr class='caracteristicasPiso'>
+                        <span>XXX m<sup>2</sup></span> <br>
+                        <span>X habitaciones</span> <br>
+                        <span>X baños</span> <br>
+                        <span>Xª planta</span> <br>
+                    </div>
+    
+    
+                    <div class='resultadoBusqueda'>
+                        <img src='../img/fondo.jpg' alt='Imagen piso'>
+                        <br>
+                        <b>XX.XXX €</b>
+                        <br>
+                        <span>Piso en <b>XXXXXXX XXXXXXXX</b></span>
+                        <p>Insertar zona/barrio</p>
+                        <hr class='caracteristicasPiso'>
+                        <span>XXX m<sup>2</sup></span> <br>
+                        <span>X habitaciones</span> <br>
+                        <span>X baños</span> <br>
+                        <span>Xª planta</span> <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer">
+            <div class="logoFooter">
+                <a href="../index.html"><img class="logo" src="../img/logo.png" alt="logo"/></a>
+            </div>
+            <div class="avisoLegal">
+                <span class="titulo">Aviso legal</span> <br/>
+                <a href= "#">Política de privacidad</a> <br/>
+                <a href= "#">Uso de cookies</a>
+            </div>
+
+            <div class="contactoFooter">
+                <span class="titulo">Contacto</span> <br/>
+                <a href= "#"><i class="far fa-envelope"></i> email@gmail.com</a> <br/>
+                <a href= "#"><i class="fas fa-phone-alt"></i> +34 888 88 88 88</a>
+            </div>
+
+            <div class="redesSociales">
+                <span class="titulo">Síguenos en</span> <br/>
+                <a href= "#"><i class="fab fa-facebook-f"></i> AFinHome Inmobiliaria</a> <br/>
+                <a href= "#"><i class="fab fa-instagram"></i> @afinhome</a> <br/>
+                <a href= "#"><i class="fab fa-twitter"></i> @afinhome</a>
+            </div>
+        </div>
+        <p id="copy">&copy; 2021 AFinHome. Todos los derechos reservados</p>
+    </footer>
+</body>

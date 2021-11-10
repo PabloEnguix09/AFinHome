@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE" />
+
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/03c106061f.js" crossorigin="anonymous"></script>
+
+    <script src="../js/ventas.js"></script>
+
+    <title>Vende con nosotros</title>
+</head>
+
+<body onload="cambioTipoPiso()">
+    <header class="encabezado fixed-top">
+        <a href="../index.html"><img class="logo" src="../img/logo.png" alt="logo" /></a>
+
+        <nav class="barra">
+            <ul>
+                <li><a href="compra.html">Compra/Alquila</a></li>
+                <li><a href="vende.html">Vende</a></li>
+                <li><a href="proximamente.html">Simula tu hipoteca</a></li>
+                <li><a href="proximamente.html">Invierte con nosotros</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <button><i class="fas fa-globe-europe"></i></button>
+    </header>
+
+    <div id="pasosVenta" class="primeraCosa ventaPasos">
+        <div class="pasoVentaActivo">
+            <p>1. Datos básicos</p>
+        </div>
+        <div class="pasoVentaNoActivo">
+            <p>2. Detalles</p>
+        </div>
+        <div class="pasoVentaNoActivo">
+            <p>3. Fotos</p>
+        </div>
+    </div>
+
+    <div class="inputsVenta">
+        <div id="datosBasicosVenta">
+            <h2>Elige el tipo de inmueble</h2>
+            <select name="tipoInmueble" id="tipoInmueble" onchange="cambioTipoPiso()">
+                <option value="1">Piso</option>
+                <option value="2">Habitación en vivienda compartida</option>
+                <option value="3">Casa o chalet</option>
+                <option value="4">Oficina, local o nave</option>
+                <option value="5">Plaza de garaje</option>
+                <option value="6">Trastero</option>
+                <option value="7">Edificio</option>
+                <option value="8">Terreno</option>
+            </select>
+            <h2>Operación</h2>
+            <input type="radio" name="Venta" id="ventaRadioButton" value="Venta" />
+            <label for="ventaRadioButton">Venta</label>
+            <br/>
+            <input type="radio" name="Venta" id="alquilerRadioButton" value="Alquiler" />
+            <label for="alquilerRadioButton">Alquiler</label>
+
+            <h2>Ubicación del inmueble</h2>
+            <input type="text" placeholder="Localidad" />
+            <br />
+            <input type="text" placeholder="Nombre de la vía" />
+            <br />
+            <input type="number" placeholder="Número de la vía" />
+
+            <div id="detallesInmueble">
+
+            </div>
+        </div>
+        <div id="detallesVenta" hidden>
+            <h2>Detalles del inmueble</h2>
+            <h4>Descripción</h4>
+            <textarea name="descripcion" id="descripcionInmueble" cols="30" rows="10" placeholder="Aquí recomendamos que déis la mayor cantidad de información posible, zona, sitios importantes cercanos, m^2, habitaciones, baños..."></textarea>
+            <div>
+                <button class="button dobleBoton" onclick="anterior(detallesVenta, datosBasicosVenta)">Volver</button>
+                <button class="button dobleBoton" onclick="siguiente(detallesVenta, fotosVenta)">Siguiente</button>
+            </div>
+        </div>
+        <div id="fotosVenta" hidden>
+            <button class="button dobleBoton" onclick="anterior(fotosVenta, detallesVenta)">Volver</button>
+            <button class="button dobleBoton" onclick="">Enviar</button>
+        </div>
+    </div>
+
+    <footer role="contentinfo">
+        <div class="footer">
+            <div class="logoFooter">
+                <a href="../index.html"><img class="logo" src="../img/logo.png" alt="logo" /></a>
+            </div>
+            <div class="avisoLegal">
+                <span class="titulo">Aviso legal</span> <br />
+                <a href="#">Política de privacidad</a> <br />
+                <a href="#">Uso de cookies</a>
+            </div>
+
+            <div class="contactoFooter">
+                <span class="titulo">Contacto</span> <br />
+                <a href="#"><i class="far fa-envelope"></i> email@gmail.com</a> <br />
+                <a href="#"><i class="fas fa-phone-alt"></i> +34 888 88 88 88</a>
+            </div>
+
+            <div class="redesSociales">
+                <span class="titulo">Síguenos en</span> <br />
+                <a href="#"><i class="fab fa-facebook-f"></i> AFinHome Inmobiliaria</a>
+                <br />
+                <a href="#"><i class="fab fa-instagram"></i> @afinhome</a> <br />
+                <a href="#"><i class="fab fa-twitter"></i> @afinhome</a>
+            </div>
+        </div>
+        <p id="copy">&copy; 2021 AFinHome. Todos los derechos reservados</p>
+    </footer>
+
+</body>
+
+</html>

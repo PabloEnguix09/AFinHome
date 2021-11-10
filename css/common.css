@@ -1,0 +1,488 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --principal: #001741;
+    --fondo: #ccc;
+}
+
+body {
+    background-color: #f2f2f2 !important;
+}
+
+.primeraCosa {
+    margin-top: 3.1875rem;
+}
+
+.encabezado {
+    width: 100%;
+    display: flex;
+    height: 3.1875rem;
+    background-color: var(--fondo);
+    overflow: hidden;
+}
+
+.encabezado .logo {
+    margin-top: 0.4rem;
+    margin-left: 1.25rem;
+}
+
+.encabezado a img {
+    width: 3.75rem;
+}
+
+.barra {
+    width: 100%;
+    text-align: center;
+    float: center;
+}
+
+.barra ul {
+    list-style: none;
+    margin: 0.75rem auto;
+}
+.barra ul li {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.barra ul li a {
+    text-decoration: none;
+    color: var(--principal);
+}
+
+.encabezado button {
+    background: none;
+    border: none;
+    float: right;
+    margin-right: 1.25rem;
+    
+}
+.encabezado i {
+    font-size: 1.25rem;
+}
+
+main i {
+    color: #001741;
+}
+
+footer {
+    width: 100%;
+    height: 11rem;
+    background-color: var(--fondo);   
+}
+.footer {
+    display:flex;
+}
+.footer span,
+.footer a {
+    color: var(--principal);
+    text-decoration: none;
+}
+
+.footer span {
+    font-size: 1.125rem;
+}
+
+.footer .logo {
+    width: 10.6875rem;
+    height: 8.625rem;
+}
+
+.footer div {
+    margin-top: 0.5rem;
+    width: 25%;
+}
+.footer .avisoLegal {
+    margin-left: 2rem;
+}
+.footer .titulo {
+    font-weight: bold;
+}
+footer #copy {
+    width: 100%;
+    text-align: center;
+    margin-top: -0.5rem;
+    color: var(--principal);
+}
+
+.contenido {
+    height: 93vh;
+    width: 100%;
+    background-image: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.landingPage {
+    width: fit-content;
+    float: right;
+    margin-right: 13rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.landingPage img {
+    margin-top: 9.25rem;
+    width: 17.6875rem;
+    height: 11.625rem;
+}
+
+.landingPage .afinhome {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #001741;
+    margin-bottom: 0;
+}
+
+.landingPage .eslogan {
+    color: #001741;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: oblique;
+    margin: 0 auto;
+}
+
+.button {
+    margin-top: 0.5rem;
+    width: 16.375rem;
+    height: 3.6875rem;
+    font-size: 1.3125rem;
+    font-weight: bold;
+    border-radius: 8.1875rem;
+    border: none;
+    background-color: var(--principal);
+    color: var(--fondo);
+}
+
+h2 {
+    margin-top: 1rem !important;
+    text-align: center;
+}
+
+.buscando {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 1.6rem auto;
+}
+
+.buscando div {
+    width: 13.5rem;
+    height: 10.9375rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+.buscando div i {
+    font-size: 4rem;
+}
+
+.buscando div p {
+    margin: 0;
+}
+
+.centradoH {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+}
+
+.queBuscas, .trabajamos {
+    margin-top: 5rem;
+}
+
+.comoTrabajamos {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+}
+.comoTrabajamosCol {
+    display: flex;
+    flex-direction: column;
+}
+.datosTrabajamos {
+    display: flex;
+}
+
+section .centradoH {
+    margin-bottom: 5rem;
+}
+
+.empresa {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.empresa h1 {
+    margin-top: 1.5rem;
+}
+
+.empresa hr {
+    width: 25rem;
+    height: 0.125rem !important;
+    background-color: #001741;
+    color: #001741;
+    font-weight: bold;
+    opacity: 1;
+    margin: 2rem auto;
+}
+
+.empresa p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.empresa button {
+    margin-bottom: 2rem;
+}
+
+.empresa h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.contactanos {
+    text-align: center;
+    margin-top: 5.1875rem;
+}
+
+.contacto {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto p {
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
+}
+
+.contacto a {
+    text-decoration: none;
+    color: #001741;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.contacto hr {
+    height: 17rem !important;
+    border: none;
+    border-left: 2px solid hsla(200, 10%, 50%,100);
+    background-color: #001741;
+    color: #001741;
+    border-color: #001741;
+    opacity: 1;
+    margin: auto 2rem;
+}
+.calculadora input,
+#buscadorCasa input {
+    background-color: #ccc;
+    border-radius: 0.5rem;
+    border: 1px solid #797979;
+}
+
+.comoTrabajamosCol div div i {
+    font-size: 3rem;
+    margin: auto 1rem;
+    margin-right: 1rem;
+    color: #001741;
+}
+
+.comoTrabajamosCol div div p {
+    margin: 1rem auto;
+}
+
+.botonCalcula {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.ventaPasos {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    
+}
+
+.pasoVentaActivo {
+    width: 33.33%;
+    height: 5rem;
+    background-color: #d7d7d7;
+}
+
+.pasoVentaActivo p {
+    color: #333;
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 1.5rem auto;
+}
+
+.pasoVentaNoActivo {
+    width: 33.33%;
+    height: 5rem;
+    background-color: #e7e7e7;
+}
+
+.pasoVentaNoActivo p {
+    color: #a5a5a5;
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 1.5rem auto;
+}
+
+.inputsVenta {
+    display: flex;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.inputsVenta h2 {
+    text-align: left;
+}
+
+.inputsVenta input {
+    margin-top: 1rem;
+}
+
+.inputsVenta button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.tipoContactoInputs {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+}
+
+#detallesVenta {
+    display: flex;
+    flex-direction: column;
+}
+
+#descripcionInmueble {
+    width: 20rem;
+    height: 18rem;
+}
+
+.dobleBoton {
+    width: 10rem;
+}
+
+#buscadorCasa {
+    display: flex;
+    background-color: var(--principal);
+    color: var(--fondo);
+    width: 56rem;
+    height: 4.5rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+
+.ciudadBuscador input {
+    padding-left: 1.2rem !important;
+}
+.ciudadBuscador i {
+    position: relative;
+    left: 1.2rem;
+    color: var(--principal);
+    z-index: 2;
+}
+
+.buttonInverted {
+    background-color: var(--fondo);
+    color: var(--principal);
+}
+
+.botonBuscador {
+    width: 9.4rem;
+    height: 2.12rem;
+    margin: 0;
+}
+
+.precioBuscador {
+    width: 5.5rem;
+}
+
+.spanPrecio {
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+#cuantasCasas {
+    margin-left: 2.3rem;
+}
+
+#resultadoFiltro {
+    margin: 0 auto;
+    width: 95%;
+    display: flex;
+}
+
+#filtroBuscador {
+    width: 15rem;
+    height: 100rem;
+    background-color: #ccc;
+    margin-right: 3rem;
+    padding: 1rem;
+}
+
+#filtroBuscador select {
+    width: 13rem;
+}
+
+.filaResultados {
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+.resultadoBusqueda {
+    width: 16rem;
+    background-color: #ccc;
+    text-align: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.resultadoBusqueda img {
+    width: 16rem;
+    height: 11rem;
+}
+
+.resultadoBusqueda .caracteristicasPiso {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    background-color: var(--principal);
+    opacity: 1;
+    color: var(--principal);
+}
+
+.precioCasa {
+    font-size: 1.5rem;
+}
+
+b, strong {
+    color: var(--principal);
+}
